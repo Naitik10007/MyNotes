@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -74,10 +76,14 @@ public class NewNoteActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
+
                 String title = etTitle.getText().toString().trim();
                 String content = etContent.getText().toString().trim();
                 // step to check both fields are not empty
                 if(!TextUtils.isEmpty(title) && !TextUtils.isEmpty(content)){
+                    Animation anim = AnimationUtils.loadAnimation(NewNoteActivity.this,R.anim.zoomout);
+                    btnCreate.startAnimation(anim);
                     createNote(title,content);
                 }else{
                     Snackbar.make(view,"Fill Empty Fields", Snackbar.LENGTH_SHORT).show();

@@ -7,10 +7,10 @@ import android.content.Context;
  */
 
 public class GetTimeAgo {
-    private static final int SECOND_MILLIS = 1000;
-    private static final int MINUTE_MILLIS = 60 * SECOND_MILLIS;
-    private static final int HOUR_MILLIS = 60 * MINUTE_MILLIS;
-    private static final int DAY_MILLIS = 24 * HOUR_MILLIS;
+    private static final int seconds = 1000;
+    private static final int minutes = 60 * seconds;
+    private static final int hours = 60 * minutes;
+    private static final int days = 24 * hours;
 
     public static String GetTimeAgo(long time, Context ctx){
 
@@ -32,20 +32,20 @@ public class GetTimeAgo {
         // TODO: localize
         final long diff = now - time;
 
-        if (diff < MINUTE_MILLIS){
+        if (diff < minutes){
             return "just now";
-        } else if (diff < 2 * MINUTE_MILLIS) {
+        } else if (diff < 2 * minutes) {
             return "a minute ago";
-        } else if (diff < 50 * MINUTE_MILLIS){
-            return (diff / MINUTE_MILLIS + " minutes ago");
-        } else if (diff < 90 * MINUTE_MILLIS) {
+        } else if (diff < 50 * minutes){
+            return (diff / minutes + " minutes ago");
+        } else if (diff < 90 * minutes) {
             return "an hour ago";
-        } else if (diff < 24 * HOUR_MILLIS){
-            return (diff / HOUR_MILLIS + " hours ago");
-        } else if (diff < 48 * HOUR_MILLIS){
+        } else if (diff < 24 * hours){
+            return (diff / hours + " hours ago");
+        } else if (diff < 48 * hours){
             return "yesterday";
         } else {
-            return diff / DAY_MILLIS + " days ago";
+            return diff / hours + " days ago";
         }
 
     }

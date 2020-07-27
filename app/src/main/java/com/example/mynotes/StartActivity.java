@@ -2,14 +2,15 @@ package com.example.mynotes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
-import com.example.mynotes.user_signin.LoginActivity;
-import com.example.mynotes.user_signin.RegisterActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class StartActivity extends AppCompatActivity {
@@ -31,6 +32,8 @@ public class StartActivity extends AppCompatActivity {
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Animation anim = AnimationUtils.loadAnimation(StartActivity.this,R.anim.fadeout);
+                regBtn.startAnimation(anim);
                 register();
             }
         });
@@ -38,17 +41,25 @@ public class StartActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Animation anim = AnimationUtils.loadAnimation(StartActivity.this,R.anim.fadeout);
+                loginBtn.startAnimation(anim);
                 login();
             }
         });
     }
 
     private void register(){
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Please wait......");
+        progressDialog.show();
         Intent registerIntent = new Intent(StartActivity.this, RegisterActivity.class);
         startActivity(registerIntent);
     }
 
     private void login(){
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Please wait.......");
+        progressDialog.show();
         Intent loginIntent = new Intent(StartActivity.this, LoginActivity.class);
         startActivity(loginIntent);
 

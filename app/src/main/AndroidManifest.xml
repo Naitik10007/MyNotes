@@ -14,10 +14,10 @@
         <activity android:name=".NewNoteActivity"
             android:label="New Note"></activity>
         <activity
-            android:name=".user_signin.LoginActivity"
+            android:name=".LoginActivity"
             android:label="@string/login" />
         <activity
-            android:name=".user_signin.RegisterActivity"
+            android:name=".RegisterActivity"
             android:label="@string/register" />
         <activity android:name=".StartActivity" />
         <activity android:name=".MainActivity"
@@ -28,6 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
         mNotesList.setHasFixedSize(true);
         mNotesList.setLayoutManager(gridLayoutManager);
-        mNotesList.addItemDecoration(new GridSpacingItemDecoration(2,dpToPx(10),true));
 
         fAuth = FirebaseAuth.getInstance();
         if(fAuth.getCurrentUser() != null){
@@ -172,9 +171,5 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-    //simple dp to pixel converter
-    private int dpToPx (int dp){
-        Resources r = getResources();
-        return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,r.getDisplayMetrics()));
-    }
+
 }

@@ -1,4 +1,4 @@
-package com.example.mynotes.user_signin;
+package com.example.mynotes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,11 +9,11 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.mynotes.MainActivity;
-import com.example.mynotes.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -47,6 +47,8 @@ public class LoginActivity extends AppCompatActivity {
                 String lPass = inputPass.getEditText().getText().toString().trim();
                 //if statement to check email is not empty
                 if(!TextUtils.isEmpty(lEmail) && !TextUtils.isEmpty(lPass)){
+                    Animation anim = AnimationUtils.loadAnimation(LoginActivity.this,R.anim.blink_anim);
+                    btnLogin.startAnimation(anim);
                     logIn(lEmail, lPass);
                 }
             }

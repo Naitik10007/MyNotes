@@ -10,28 +10,32 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="125dp">
+        android:layout_marginBottom="150dp"
+
+        >
 
 
         <Button
             android:id="@+id/login_start"
-            android:layout_width="match_parent"
+            android:layout_width="188dp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/gradient_home1"
             android:text="Log IN"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
         <Button
             android:id="@+id/register_start"
-            android:layout_width="275dp"
+            android:layout_width="183dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/gradient_home2"
-            android:text="Create A New Account"
+            android:text="Register"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -41,8 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginTop="292dp"
+        android:fontFamily="@font/bigshot_one"
         android:gravity="center_horizontal"
-        android:text="Welcome to                   My Notes"
+        android:text="   Welcome to                     My Notes"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="40sp"

@@ -6,14 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/logandreg"
-    tools:context=".user_signin.LoginActivity">
-
-    <ImageView
-        android:layout_width="288dp"
-        android:layout_height="302dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/logo" />
+    tools:context=".LoginActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_log_email"
@@ -46,7 +39,23 @@
         android:layout_height="wrap_content"
         android:text="Log in"
         android:layout_margin="10dp"
-        android:background="@drawable/login_btn"/>
+        android:background="@drawable/login_btn"
+        android:fontFamily="@font/bigshot_one"/>
 
+    <ImageView
+    android:layout_width="288dp"
+    android:layout_height="302dp"
+    android:layout_gravity="center"
+    android:layout_marginTop="30dp"
+    android:src="@drawable/logo" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oregano"
+        android:gravity="center_horizontal"
+        android:text="Always keep your Notes safe with My Notes"
+        android:textSize="30dp"
+        android:textStyle="bold"></TextView>
 
 </LinearLayout>
